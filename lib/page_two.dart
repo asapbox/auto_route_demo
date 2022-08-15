@@ -18,13 +18,13 @@ class PageTwo extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Page Two'),
-            const SizedBox(height: 40,),
+             Text('Page Two', style: Theme.of(context).textTheme.headline4,),
+            const SizedBox(height: 20,),
             ElevatedButton(
               onPressed: () {
                AutoRouter.of(context).pop();
               },
-              child: const Text('Back to Page One'),
+              child: const Text('Go back'),
             ),
           ],
         ),

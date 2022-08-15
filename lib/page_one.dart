@@ -17,16 +17,58 @@ class PageOne extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Page One'),
+            Text(
+              'Page One',
+              style: Theme.of(context).textTheme.headline4,
+            ),
             const SizedBox(
-              height: 40,
+              height: 20,
+            ),
+            const SizedBox(
+              height: 10,
             ),
             ElevatedButton(
               onPressed: () {
-                AutoRouter.of(context).push(PageTwoRoute(name: 'hello', emp: 20));
+                AutoRouter.of(context).push(const PageOneOneRoute());
+              },
+              child: const Text('To Page OneOne'),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                AutoRouter.of(context).push(const PageOneTwoRoute());
+              },
+              child: const Text('To Page OneTwo'),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                AutoRouter.of(context).push(
+                  EmptyRouterPageRoute(
+                    children: [
+                      PageTwoRoute(name: 'hello', emp: 20),
+                    ],
+                  ),
+                );
               },
               child: const Text('To Page Two'),
-            )
+            ),
+            ElevatedButton(
+              onPressed: () {
+                AutoRouter.of(context).push(
+                  const EmptyRouterPageRoute(
+                    children: [
+                      PageTwoOneRoute(),
+                    ],
+                  ),
+                );
+              },
+              child: const Text('To Page TwoOne'),
+            ),
           ],
         ),
       ),
