@@ -59,13 +59,20 @@ class PageOne extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                AutoRouter.of(context).push(
-                  const EmptyRouterPageRoute(
-                    children: [
-                      PageTwoOneRoute(),
-                    ],
-                  ),
-                );
+
+              //  router.parent<StackRouter>();
+
+                // final router = context.innerRouterOf<StackRouter>(EmptyRouterPageRoute.name);
+                // router?.push(const PageTwoOneRoute());
+
+
+                // AutoRouter.of(context).push(
+                //   const EmptyRouterPageRoute(
+                //     children: [
+                //       PageTwoOneRoute(),
+                //     ],
+                //   ),
+                // );
               },
               child: const Text('To Page TwoOne'),
             ),

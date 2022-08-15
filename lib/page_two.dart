@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:auto_route_demo/app_router.dart';
 import 'package:flutter/material.dart';
 
 class PageTwo extends StatelessWidget {
@@ -26,6 +27,14 @@ class PageTwo extends StatelessWidget {
               },
               child: const Text('Go back'),
             ),
+            const SizedBox(height: 10,),
+            ElevatedButton(
+              onPressed: () {
+                AutoRouter.of(context).push(const PageTwoOneRoute());
+              },
+              child: const Text('To Page TwoOne'),
+            ),
+
           ],
         ),
       ),
